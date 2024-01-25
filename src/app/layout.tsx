@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-// import Provider from './components/provider';
-import { WagmiProvider } from 'wagmi';
-import { config } from './components/wagmiConfig'
+import Provider from './utils/provider';
+import { config } from './utils/wagmiConfig'
 import Header from './shared/header';
 import Footer from './shared/footer';
 import ImagePreviewModal from './components/imagePreviewModal';
@@ -21,14 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} ${cinzel.variable}`}>
-        {/* <Provider> */}
-          <WagmiProvider config={config}>
-            <Header />
-            {children}
-            <ImagePreviewModal />
-            <Footer />
-          </WagmiProvider>
-        {/* </Provider> */}
+        <Provider>
+          <Header />
+          {children}
+          <ImagePreviewModal />
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

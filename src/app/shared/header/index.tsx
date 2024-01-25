@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-// import { ConnectWallet } from '@thirdweb-dev/react';
+import { ConnectWallet } from '@thirdweb-dev/react';
 import styles from './header.module.css'
 
 export default function Header() {
@@ -18,12 +18,12 @@ export default function Header() {
         />
         <p className={styles.exploreButton}>Explore Marketplace</p>
 
-        {/* <ConnectWallet
+        <ConnectWallet
           theme='dark'
           modalSize="compact"
           btnTitle={" "}
           className={styles.connectWallet}
-        /> */}
+        />
       </div>
     </header>
   );

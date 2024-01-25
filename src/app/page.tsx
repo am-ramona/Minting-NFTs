@@ -26,30 +26,26 @@ export default function Home() {
     }
   };
 
-  const getImageSrc = (url) => {
-    console.log('getImageSrc', url)
-  }
-
-  // console.log('image', localStorage.getItem('uploadedImage'))
-  // console.log('title', localStorage.getItem('title'))
-  // console.log('description', localStorage.getItem('description'))
-
   return (
-    <main className="grid h-full justify-center pb-[106.27px]">
+    <main className="grid h-full justify-center ">
       <hgroup className="h-[216.143px] lg:w-[1140px] w-10/12 rounded-2xl border border-solid border-white bg-white/[0.09] backdrop-blur text-center">
         <h1 className="font-cinzel font-bold text-[44px] leading-[64.47px] bg-title-gradient bg-clip-text pt-[44.8px]">MINT NEW NFT</h1>
         <p className="px-[310px] leading-[24.644px] opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem tortor quis amet scelerisque vivamus egestas. </p>
       </hgroup>
       <form className="grid bg-transparent place-items-center mt-[94.58px]" onSubmit={handleDataUpload}>
-        <ImageUploader getImageSrc={getImageSrc} />
+        <ImageUploader />
         <input className="w-[544.158px] h-[59.29px] mb-[15.26px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" onChange={(e) => localStorage.setItem('title', e.target.value)} defaultValue={title} placeholder='NFT Title'></input>
         <textarea className="w-[544.158px] h-[157.939px] mb-[17.34px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" onChange={(e) => localStorage.setItem('description', e.target.value)} defaultValue={title} placeholder='description'></textarea>
         <div>
           <button className='w-[262.08px] h-[63.078px]'>Mint without listing</button>
-          <Link href="?modal=true"><button type="submit" className='w-[262.08px] h-[63.078px] rounded-[3px]'
+          <Link href="?modal=true">
+            <button type="submit" className='w-[262.08px] h-[63.078px] rounded-[3px]'
             style={{
               background: 'linear-gradient(90deg, #B23DEB 0%, #DE8FFF 100%)'
-            }}>Mint and list immediately</button></Link>
+            }}>
+              Mint and list immediately
+            </button>
+          </Link>
         </div>
       </form>
     </main>

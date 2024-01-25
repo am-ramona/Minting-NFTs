@@ -1,5 +1,5 @@
 .footer {
-    @apply w-full h-[118.445px] grid justify-center bg-black self-end;
+    @apply w-full h-[118.445px] grid justify-center bg-black self-end flex-[0_0_118.445px];
 }
 
 .container {

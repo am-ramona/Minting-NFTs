@@ -1,5 +1,5 @@
 .header {
-    @apply w-full grid h-[113.94px] place-items-center bg-transparent;
+    @apply w-full grid h-[113.94px] place-items-center bg-transparent flex-[0_0_113.94px];
 }
 
 .container {
