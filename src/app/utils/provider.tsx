@@ -1,7 +1,6 @@
 "use client";
 
-import { ChainId, ThirdwebProvider, metamaskWallet, coinbaseWallet,
-    walletConnect, } from "@thirdweb-dev/react"
+import { ThirdwebProvider } from "@thirdweb-dev/react"
 import { Goerli } from "@thirdweb-dev/chains"
 
 const Provider = ({children}) => {
