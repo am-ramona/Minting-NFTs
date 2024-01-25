@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import { useDropzone } from 'react-dropzone';
 
-export default function ImageUploader(props ) {
+export default function ImageUploader(props) {
   const [files, setFiles] = useState([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {

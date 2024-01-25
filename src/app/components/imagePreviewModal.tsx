@@ -3,15 +3,11 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import {
   useStorageUpload,
   useMintNFT,
   useNFTCollection,
-  ThirdwebNftMedia,
-  useContract,
   useAddress,
-  useMetamask
 } from "@thirdweb-dev/react";
 
 function ImagePreviewModal() {
