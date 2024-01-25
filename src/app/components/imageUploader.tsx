@@ -1,59 +1,5 @@
-// import React, { useState } from 'react';
-// import { useDropzone } from 'react-dropzone';
-
-// const ImageUploader = () => {
-//   const [image, setImage] = useState(null);
-//   const [description, setDescription] = useState('');
-//   const [showPopup, setShowPopup] = useState(false);
-
-//   const onDrop = (acceptedFiles) => {
-//     const file = acceptedFiles[0];
-//     const reader = new FileReader();
-//     reader.onload = () => {
-//       setImage(reader.result);
-//     };
-//     reader.readAsDataURL(file);
-//   };
-
-//   const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
-//   const openPopup = () => {
-//     setShowPopup(true);
-//   };
-
-//   const closePopup = () => {
-//     setShowPopup(false);
-//   };
-
-//   return (
-//     <div>
-//       <div {...getRootProps()}>
-//         <input {...getInputProps()} />
-//         <p>Drag & drop an image here, or click to select one</p>
-//       </div>
-//       <input
-//         type="text"
-//         value={description}
-//         onChange={(e) => setDescription(e.target.value)}
-//         placeholder="Enter image description"
-//       />
-//       <button onClick={openPopup}>Preview Image</button>
-
-//       {showPopup && (
-//         <div>
-//           <div>
-//             <img src={image} alt="Uploaded" />
-//             <p>{description}</p>
-//           </div>
-//           <button onClick={closePopup}>Close</button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ImageUploader;
 "use client";
+
 import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import { useDropzone } from 'react-dropzone';
@@ -90,7 +36,7 @@ const img = {
 };
 
 
-export default function ImageUploader(props) {
+export default function ImageUploader(props: ) {
   const [files, setFiles] = useState([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {

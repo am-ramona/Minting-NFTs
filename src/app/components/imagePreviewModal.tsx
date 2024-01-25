@@ -4,8 +4,6 @@ import { useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-// import { createHelia } from 'helia';
-// import { json } from '@helia/json';
 import {
   useStorageUpload,
   useMintNFT,
@@ -27,28 +25,17 @@ function ImagePreviewModal() {
   const connectWithMetamask = useMetamask();
   const { data: hash, writeContract } = useWriteContract();
 
-  console.log('address', address)
-  console.log('connectWithMetamask', connectWithMetamask)
-  const nftCollection = useNFTCollection(
-    process.env.NEXT_PUBLIC_NFT_ADDRESS
-  );
-  // const nftCollection = useContract(
-  //   process.env.NEXT_PUBLIC_NFT_ADDRESS, "nft-collection"
-  // );
-  // Load all the NFTs from the collection (with a loading flag)
-  const { data: nfts, isLoading2 } = useNFTs(nftCollection);
+  // console.log('address', address)
 
   const { mutateAsync: upload } = useStorageUpload();
-  const { mutate: mintNft, isLoading, error } = useMintNFT(nftCollection);
+  // const { mutate: mintNft, isLoading, error } = useMintNFT(nftCollection);
 
   if (typeof window !== 'undefined') {
-    // Get the variable from local storage
     var image = localStorage.getItem('uploadedImage');
     var title = localStorage.getItem('title');
-    // Get the variable from local storage
     var description = localStorage.getItem('description');
   }
-  console.log("nft", process.env.NEXT_PUBLIC_NFT_ADDRESS)
+  // console.log("nft", process.env.NEXT_PUBLIC_NFT_ADDRESS)
   // localStorage.setItem('title', title)
   // localStorage.setItem('description', description)
 
@@ -74,43 +61,19 @@ function ImagePreviewModal() {
     functionName: 'mint' 
   })
   const { writeContract:mint, isSuccess } = useWriteContract() 
-
+  
+  // As per the technical requirements
   // const mint = async (to: string, uri: string) => {
-  //   uploadToIPFS();
+  //  
   // }
 
   const uploadToIPFS = async () => {
     // Implement IPFS upload logic using the ipfs library
     // ...
     const metadataObject = generateOpenSeaMetadata(localStorage.getItem('uploadedImage'), localStorage.getItem('title'), localStorage.getItem('description'));
-    // const buffer = await metadataObject.arrayBuffer();
-    // const result = await ipfs.add(metadataObject);
-
-    // const cid = result.path;
-    // return cid;
-    // For simplicity, let's just log the file name for now
-    // console.log('Uploading to IPFS:', file.name);
-    // var helia = await createHelia();
-    // And upload the data with the upload function
     const uris = await upload({ data: [metadataObject] });
     console.log('uris', uris)
-    // mint();
-    // const j = json(helia)
-    // const myImmutableAddress = await j.add(metadataObject)
-    // console.log('ipfs', await j.get(myImmutableAddress))
-
   };
-
-
-
-  // const mint = async (to: string, uri: string) => {
-  //   writeContract({
-  //     address: '0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2',
-  //     abi,
-  //     functionName: 'mint',
-  //     args: [BigInt(tokenId)],
-  //   })
-  // }
 
   return (
     <>
@@ -134,19 +97,6 @@ function ImagePreviewModal() {
                   <p className="font-opSans text-base/[24.644px] font-normal pb-[18.4px]" >{description}</p>
                 </>
               }
-
-              {/* {!isLoading2 ? (
-        <div>
-          {nfts?.map((nft) => (
-            <div key={nft.metadata.id.toString()}>
-              <ThirdwebNftMedia metadata={nft.metadata} />
-              <h3>{nft.metadata.name}</h3>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )} */}
 
               {hash && <div>Transaction Hash: {hash}</div>}
               <Link href={pathname} className="justify-self-center">
