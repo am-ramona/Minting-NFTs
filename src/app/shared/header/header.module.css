@@ -1,0 +1,15 @@
+.header {
+    @apply w-full grid h-[113.94px] place-items-center bg-transparent;
+}
+
+.container {
+    @apply max-w-[1140px] w-full justify-center grid grid-cols-[1fr_auto_auto] gap-x-[26.44px];
+}
+
+.exploreButton {
+    @apply text-white text-base not-italic font-semibold leading-[24.644px] justify-self-end;
+}
+
+.connectWallet {
+    @apply !bg-[url('/connect_wallet.svg')] !bg-no-repeat text-white justify-self-end cursor-pointer !min-w-fit !w-[28px] !h-[28px] !bg-transparent;
+}

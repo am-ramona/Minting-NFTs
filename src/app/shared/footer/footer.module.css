@@ -1,0 +1,15 @@
+.footer {
+    @apply w-full h-[118.445px] grid justify-center bg-black self-end;
+}
+
+.container {
+    @apply max-w-[1140px] w-[1140px] grid place-items-center grid-cols-[auto_auto_auto] justify-between;
+}
+
+.signature {
+    @apply text-white text-base not-italic font-semibold leading-[24.644px] justify-self-end;
+}
+
+.exploreButton {
+    @apply w-[199px] h-[63.078px] bg-[url('/subtract.png')] bg-no-repeat bg-left-top bg-cover;
+}
