@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Provider from './utils/provider';
-import { config } from './utils/wagmiConfig'
 import Header from './shared/header';
 import Footer from './shared/footer';
 import ImagePreviewModal from './components/imagePreviewModal';

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import { useDropzone } from 'react-dropzone';
 
-export default function ImageUploader(props) {
+export default function ImageUploader() {
   const [files, setFiles] = useState([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -20,7 +20,7 @@ export default function ImageUploader(props) {
   useEffect(() => {
     // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
     return () => files.forEach(file => URL.revokeObjectURL(file.preview));
-  }, []);
+  }, [files]);
 
   useEffect(() => {
     if (files && files.length > 0) {
