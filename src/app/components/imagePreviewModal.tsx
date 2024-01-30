@@ -53,7 +53,7 @@ function ImagePreviewModal() {
         name: "Mint",
         ipfsHash: uris
       },
-      to: process.env.NEXT_PUBLIC_NFT_ADDRESS,
+      to: process.env.NEXT_PUBLIC_NFT_ADDRESS!,
     })
   };
 
