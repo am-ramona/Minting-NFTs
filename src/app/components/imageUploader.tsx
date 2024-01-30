@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useDropzone } from 'react-dropzone';
 
 export default function ImageUploader() {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState<T & { preview: string; }>([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {
       'image/*': []
