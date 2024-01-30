@@ -10,7 +10,7 @@ export default function ImageUploader() {
     accept: {
       'image/*': []
     },
-    onDrop: acceptedFiles => {
+    onDrop: (acceptedFiles: { map: (arg0: (file: any) => any) => React.SetStateAction<never[]>; }) => {
       setFiles(acceptedFiles.map(file => Object.assign(file, {
         preview: URL.createObjectURL(file)
       })));
