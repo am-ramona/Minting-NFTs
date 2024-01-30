@@ -65,7 +65,7 @@ function ImagePreviewModal() {
           <div className="bg-black pt-[21.11px] px-[22.84px] pb-[32.89px] w-[457.297px] h-max text-white">
             <div className="grid items-center">
               <Image
-                src={localStorage.getItem('uploadedImage')}
+            src={localStorage.getItem('uploadedImage')!}
                 alt='Preview NFT Image'
                 width='412'
                 height='346'
