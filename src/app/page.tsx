@@ -5,7 +5,9 @@ import Link from "next/link";
 import ImageUploader from "./components/imageUploader";
 
 export default function Home() {
+
   const [title, setTitle] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
 
   return (
     <main className="grid h-full justify-center ">
@@ -15,8 +17,16 @@ export default function Home() {
       </hgroup>
       <form className="grid bg-transparent place-items-center mt-[94.58px]">
         <ImageUploader />
-        <input className="w-[544.158px] h-[59.29px] mb-[15.26px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" onChange={(e) => localStorage.setItem('title', e.target.value)} defaultValue={title} placeholder='NFT Title'></input>
-        <textarea className="w-[544.158px] h-[157.939px] mb-[17.34px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" onChange={(e) => localStorage.setItem('description', e.target.value)} defaultValue={title} placeholder='description'></textarea>
+        <input className="w-[544.158px] h-[59.29px] mb-[15.26px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
+            onChange={(e) => localStorage.setItem('title', e.target.value)} 
+            defaultValue={title} 
+            placeholder='NFT Title'>
+        </input>
+        <textarea className="w-[544.158px] h-[157.939px] mb-[17.34px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
+            onChange={(e) => localStorage.setItem('description', e.target.value)} 
+            defaultValue={description} 
+            placeholder='description'>
+        </textarea>
         <div>
           <button className='w-[262.08px] h-[63.078px]'>Mint without listing</button>
           <Link href="?modal=true">
