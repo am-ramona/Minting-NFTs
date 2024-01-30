@@ -32,7 +32,7 @@ function ImagePreviewModal() {
   // }, [])
 
 
-  const generateOpenSeaMetadata = (imageUrl, imageTitle, imageDescription) => {
+  const generateOpenSeaMetadata = (imageUrl: any, imageTitle: any, imageDescription: any) => {
     const metadataObject = {
       name: imageTitle,
       description: imageDescription,
