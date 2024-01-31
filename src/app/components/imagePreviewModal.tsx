@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from 'react';
 import { useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +10,7 @@ import {
   useNFTCollection,
   useAddress,
 } from "@thirdweb-dev/react";
+import { notFound } from 'next/navigation';
 
 function ImagePreviewModal() {
   const searchParams = useSearchParams();
@@ -29,7 +31,11 @@ function ImagePreviewModal() {
   //     var description = localStorage.getItem('description');
   //   }
   // }, [])
-
+useEffect(() => {
+  if (error || !modal) {
+    notFound();
+  }
+}, [error, modal])
 
   const generateOpenSeaMetadata = (imageUrl: any, imageTitle: any, imageDescription: any) => {
     const metadataObject = {
@@ -46,6 +52,10 @@ function ImagePreviewModal() {
     // ...
     const metadataObject = generateOpenSeaMetadata(localStorage.getItem('uploadedImage'), localStorage.getItem('title'), localStorage.getItem('description'));
     const uris = await upload({ data: [metadataObject] });
+
+    if (!uris) {
+      notFound();
+    }
 
     mintNft({
       metadata: {
