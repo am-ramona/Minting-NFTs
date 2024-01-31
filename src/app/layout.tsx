@@ -5,6 +5,9 @@ import Footer from './shared/footer';
 import ImagePreviewModal from './components/imagePreviewModal';
 import { openSans, cinzel } from "./fonts";
 import "./globals.css";
+import dynamic from 'next/dynamic';
+ 
+const NoSSR = dynamic(() => import('./components/imagePreviewModal'), { ssr: false });
 
 export const metadata: Metadata = {
   title: "ERC721 - Minting operation",
