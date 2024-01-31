@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Provider from './utils/provider';
 import Header from './shared/header';
 import Footer from './shared/footer';
@@ -22,12 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} ${cinzel.variable}`}>
+      <Suspense fallback={<>Loading...</>}>
         <Provider>
           <Header />
           {children}
           <ImagePreviewModal />
           <Footer />
         </Provider>
+        </Suspense>
       </body>
     </html>
   );

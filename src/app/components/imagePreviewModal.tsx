@@ -31,11 +31,11 @@ function ImagePreviewModal() {
   //     var description = localStorage.getItem('description');
   //   }
   // }, [])
-useEffect(() => {
-  if (error || !modal) {
-    notFound();
-  }
-}, [error, modal])
+// useEffect(() => {
+//   if (error || !modal) {
+//     notFound();
+//   }
+// }, [error, modal])
 
   const generateOpenSeaMetadata = (imageUrl: any, imageTitle: any, imageDescription: any) => {
     const metadataObject = {
