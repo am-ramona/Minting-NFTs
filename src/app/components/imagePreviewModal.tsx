@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense } from 'react';
 import { useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +57,7 @@ function ImagePreviewModal() {
   };
 
   return (
-    <><Suspense>
+    <>
       {modal && typeof window !== 'undefined' &&
         <dialog
           className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
@@ -85,7 +84,6 @@ function ImagePreviewModal() {
           </div>
         </dialog>
       }
-      </Suspense>
     </>
   );
 }

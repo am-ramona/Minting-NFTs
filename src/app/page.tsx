@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Link from "next/link";
 import ImageUploader from "./components/imageUploader";
 
@@ -16,10 +16,12 @@ export default function Home() {
         <p className="px-[310px] leading-[24.644px] opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem tortor quis amet scelerisque vivamus egestas. </p>
       </hgroup>
       <form className="grid bg-transparent place-items-center mt-[94.58px]">
+      <Suspense fallback={<>Loading...</>}>
         <ImageUploader />
+        </Suspense>
         <input className="w-[544.158px] h-[59.29px] mb-[15.26px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
             onChange={(e) => localStorage.setItem('title', e.target.value)} 
-            defaultValue={title} 
+            defaultValue={title} s
             placeholder='NFT Title'>
         </input>
         <textarea className="w-[544.158px] h-[157.939px] mb-[17.34px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
