@@ -21,7 +21,7 @@ export default function Home() {
         </Suspense>
         <input className="w-[544.158px] h-[59.29px] mb-[15.26px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
             onChange={(e) => localStorage.setItem('title', e.target.value)} 
-            defaultValue={title} s
+            defaultValue={title}
             placeholder='NFT Title'>
         </input>
         <textarea className="w-[544.158px] h-[157.939px] mb-[17.34px] border border-solid rounded-[5px] border-[#9E9E9E] bg-[#383838] pl-[20.74px]" 
