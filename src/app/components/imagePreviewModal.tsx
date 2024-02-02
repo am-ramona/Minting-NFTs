@@ -24,19 +24,6 @@ function ImagePreviewModal() {
   );
   const { mutate: mintNft, isLoading, error } = useMintNFT(nftCollection);
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     var image = localStorage.getItem('uploadedImage');
-  //     var title = localStorage.getItem('title');
-  //     var description = localStorage.getItem('description');
-  //   }
-  // }, [])
-// useEffect(() => {
-//   if (error || !modal) {
-//     notFound();
-//   }
-// }, [error, modal])
-
   const generateOpenSeaMetadata = (imageUrl: any, imageTitle: any, imageDescription: any) => {
     const metadataObject = {
       name: imageTitle,
@@ -52,10 +39,6 @@ function ImagePreviewModal() {
     // ...
     const metadataObject = generateOpenSeaMetadata(localStorage.getItem('uploadedImage'), localStorage.getItem('title'), localStorage.getItem('description'));
     const uris = await upload({ data: [metadataObject] });
-
-    if (!uris) {
-      notFound();
-    }
 
     mintNft({
       metadata: {
@@ -74,7 +57,7 @@ function ImagePreviewModal() {
           <div className="bg-black pt-[21.11px] px-[22.84px] pb-[32.89px] w-[457.297px] h-max text-white">
             <div className="grid items-center">
               <Image
-            src={localStorage.getItem('uploadedImage')!}
+                src={localStorage.getItem('uploadedImage')!}
                 alt='Preview NFT Image'
                 width='412'
                 height='346'
