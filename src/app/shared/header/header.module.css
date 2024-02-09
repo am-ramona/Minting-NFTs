@@ -3,7 +3,7 @@
 }
 
 .container {
-    @apply max-w-[1140px] w-full justify-center grid grid-cols-[1fr_auto_auto] gap-x-[26.44px];
+    @apply max-w-[90%] w-full justify-center grid grid-cols-[1fr_auto_auto] gap-x-[26.44px];
 }
 
 .exploreButton {

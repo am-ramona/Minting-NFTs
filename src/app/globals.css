@@ -24,13 +24,12 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
   height: 100%;
   min-height: 150vh;
   color: rgb(var(--foreground-rgb));
-  background: #000000 url("/BG.png") no-repeat center center;
+  background: #000000 url("/BG.png") no-repeat fixed center center;
+  background-size: cover;
 }
 
 h1 {
