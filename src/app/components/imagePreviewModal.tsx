@@ -48,6 +48,12 @@ function ImagePreviewModal() {
     })
   };
 
+  const emptyLocalStorage = () => {
+    localStorage.setItem('uploadedImage', '')
+    localStorage.setItem('title', '')
+    localStorage.setItem('description', '')
+  }
+
   return (
     <>
       {modal && typeof window !== 'undefined' &&
@@ -55,7 +61,7 @@ function ImagePreviewModal() {
           className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="bg-black pt-[21.11px] px-[22.84px] pb-[32.89px] w-[457.297px] h-max text-white">
             <div className="grid items-center">
-              <Link href={pathname} className="justify-self-end"><span>x</span></Link>
+              <Link href={pathname} onClick={() => emptyLocalStorage()}className="justify-self-end"><span>x</span></Link>
               <Image
                 src={localStorage.getItem('uploadedImage')!}
                 alt='Preview NFT Image'
