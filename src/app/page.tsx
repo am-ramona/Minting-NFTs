@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className="grid h-full justify-center place-items-center">
-      <hgroup className="h-[216.143px] lg:w-[1140px] w-10/12 max-w-[90%] rounded-2xl border border-solid border-white bg-white/[0.09] backdrop-blur text-center">
+      <hgroup className="h-[216.143px] w-[90%] xl:w-[1140px] w-10/12 max-w-[90%] rounded-2xl border border-solid border-white bg-white/[0.09] backdrop-blur text-center">
         <h1 className="font-cinzel font-bold text-[44px] leading-[64.47px] bg-title-gradient bg-clip-text pt-[44.8px]">MINT NEW NFT</h1>
         <p className="lg:px-[310px] px-[2%] leading-[24.644px] opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem tortor quis amet scelerisque vivamus egestas. </p>
       </hgroup>

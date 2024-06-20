@@ -1,9 +1,9 @@
 .footer {
-    @apply w-full h-[118.445px] grid place-items-center justify-center bg-black self-end;
+    @apply w-full h-[118.445px] grid place-items-center bg-black;
 }
 
 .container {
-    @apply sm:w-[90%] md:w-[1140px] grid place-items-center grid-cols-[auto_auto_auto] justify-between;
+    @apply sm:w-[90%] max-w-[90%] w-full grid place-items-center grid-cols-[auto_auto_auto] justify-between;
 }
 
 .signature {
@@ -11,5 +11,5 @@
 }
 
 .exploreButton {
-    @apply w-[199px] h-[63.078px] bg-[url('/subtract.png')] bg-no-repeat bg-left-top bg-cover;
+    @apply w-[auto] md:w-[199px] h-[63.078px] bg-[url('/subtract.png')] bg-no-repeat bg-left-top bg-cover;
 }
