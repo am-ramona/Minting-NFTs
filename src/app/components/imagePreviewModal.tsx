@@ -23,7 +23,7 @@ function ImagePreviewModal() {
   );
   const { mutate: mintNft, isLoading, error } = useMintNFT(nftCollection);
 
-  const generateOpenSeaMetadata = (imageUrl: string | null, imageTitle: string | null, imageDescription: string | null) => {
+  const generateOpenSeaMetadata = (imageUrl: string, imageTitle: string, imageDescription: string) => {
     const metadataObject = {
       name: imageTitle,
       description: imageDescription,
