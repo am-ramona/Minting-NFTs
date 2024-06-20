@@ -4,8 +4,12 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import { useDropzone } from 'react-dropzone';
 
+interface CustomFile extends File {
+  preview: string;
+}
+
 export default function ImageUploader() {
-  const [files, setFiles] = useState<any>([]);
+  const [files, setFiles] = useState<CustomFile[]>([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {
       'image/*': []
@@ -19,7 +23,7 @@ export default function ImageUploader() {
 
   useEffect(() => {
     // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
-    return () => files.forEach((file: any) => URL.revokeObjectURL(file.preview));
+    return () => files.forEach((file: CustomFile) => URL.revokeObjectURL(file.preview));
   }, [files]);
 
   useEffect(() => {
