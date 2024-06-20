@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from 'react';
 import { useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +9,7 @@ import {
   useNFTCollection,
   useAddress,
 } from "@thirdweb-dev/react";
-import { notFound } from 'next/navigation';
+// import { notFound } from 'next/navigation';
 
 function ImagePreviewModal() {
   const searchParams = useSearchParams();
