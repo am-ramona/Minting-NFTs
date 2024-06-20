@@ -33,7 +33,7 @@ export default function ImageUploader() {
   }, [files]);
 
   return (
-    <section className="w-[544.158px] h-[94px] mb-[19.34px] text-center border border-dashed border-[#9E9E9E] rounded-[5px] bg-[#383838]">
+    <section className="w-[90%] md:w-[544.158px] h-[94px] mb-[19.34px] text-center border border-dashed border-[#9E9E9E] rounded-[5px] bg-[#383838]">
       <div {...getRootProps({ className: 'dropzone' })} className="h-full">
         <input {...getInputProps()} />
         <div className="h-full grid">
