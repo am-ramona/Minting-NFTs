@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import ImageUploader from "../components/imageUploader";
+import ImageUploader from "./components/imageUploader";
 
 export default function Home() {
 

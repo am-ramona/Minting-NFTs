@@ -5,7 +5,7 @@ import { Goerli } from "@thirdweb-dev/chains"
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
     return (
-        <ThirdwebProvider activeChain={Goerli} clientId="bf883a55580f9e31c1cbaa9a3e3996ef">
+        <ThirdwebProvider activeChain={Goerli} clientId={process.env.NEXT_PUBLIC_CLIENT_ID}>
             {children}
         </ThirdwebProvider>
     )
