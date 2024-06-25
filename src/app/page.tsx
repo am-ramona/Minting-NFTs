@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import ImageUploader from "./components/imageUploader";
+import { useState } from "react"
+import Link from "next/link"
+import ImageUploader from "./components/Atoms/imageUploader"
 
 export default function Home() {
 

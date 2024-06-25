@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import { ConnectWallet } from '@thirdweb-dev/react';
+import Image from "next/image"
+import { ConnectWallet } from '@thirdweb-dev/react'
 import styles from './header.module.css'
 
-export default function Header() {
+const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
@@ -28,3 +28,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;

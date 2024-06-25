@@ -1,4 +1,4 @@
-import { Cinzel, Open_Sans } from "next/font/google";
+import { Cinzel, Open_Sans } from "next/font/google"
 
 export const cinzel = Cinzel({
   weight: ['400', '700'],

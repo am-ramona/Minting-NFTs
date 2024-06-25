@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from "next/image"
 import styles from './footer.module.css'
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -22,3 +22,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

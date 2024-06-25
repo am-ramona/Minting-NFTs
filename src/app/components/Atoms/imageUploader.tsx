@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import Image from "next/image";
-import { useDropzone } from 'react-dropzone';
+import React, { useEffect, useState } from 'react'
+import Image from "next/image"
+import { useDropzone } from 'react-dropzone'
 
 interface CustomFile extends File {
   preview: string;
 }
 
-export default function ImageUploader() {
+const ImageUploader: React.FC = () => {
   const [files, setFiles] = useState<CustomFile[]>([]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -51,3 +51,5 @@ export default function ImageUploader() {
     </section>
   );
 }
+
+export default ImageUploader;

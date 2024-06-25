@@ -11,7 +11,7 @@ import {
 } from "@thirdweb-dev/react";
 // import { notFound } from 'next/navigation';
 
-function ImagePreviewModal() {
+const ImagePreviewModal: React.FC = () => {
   const searchParams = useSearchParams();
   const modal = searchParams.get("modal");
   const pathname = usePathname();

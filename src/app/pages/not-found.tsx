@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
  
-export default function NotFound() {
+const NotFound: React.FC = () => {
   return (
     <div>
       <h2>Not Found</h2>
@@ -31,3 +31,5 @@ export default async function NotFound() {
   )
 }
 --*/
+
+export default NotFound;
