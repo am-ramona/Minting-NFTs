@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { WebVitals } from './_components/web-vitals'
 import Provider from './utils/provider'
 import Header from './shared/header'
 import Footer from './shared/footer'
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} ${cinzel.variable}`}>
         <Suspense fallback={<>Loading...</>}>
           <Provider>
+            <WebVitals />
             <Header />
             {children}
             <ImagePreviewModal />
