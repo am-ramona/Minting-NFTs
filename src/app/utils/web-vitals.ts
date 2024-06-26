@@ -2,13 +2,12 @@
 
 import { useReportWebVitals, ReportHandler } from 'next/web-vitals'
  
-const WebVitals = () => {
+export const WebVitals = () => {
   useReportWebVitals((metric) => {
     console.log(metric)
   })
 }
 
-export default WebVitals
 // import { ReportHandler } from 'web-vitals';
 
 // const reportWebVitals = (onPerfEntry?: ReportHandler) => {
