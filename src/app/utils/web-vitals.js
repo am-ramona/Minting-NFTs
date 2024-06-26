@@ -2,8 +2,8 @@
 
 import { useReportWebVitals, ReportHandler } from 'next/web-vitals'
  
-export const WebVitals = () => {
-  return useReportWebVitals((metric) => {
+export const WebVitals = (onPerfEntry?: ReportHandler) => {
+ useReportWebVitals((metric) => {
     console.log(metric)
   })
 }
