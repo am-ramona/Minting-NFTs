@@ -4,7 +4,7 @@ import { WebVitals } from './utils/web-vitals'
 import Provider from './utils/provider'
 import Header from './shared/header'
 import Footer from './shared/footer'
-import ImagePreviewModal from './components/Molecules/imagePreviewModal'
+import  { ImagePreviewModal } from './components'
 import { openSans, cinzel } from "./fonts"
 import "./globals.css"
 
@@ -51,6 +51,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} ${cinzel.variable}`}>
         <Suspense fallback={<>Loading...</>}>
           <Provider>
+            <WebVitals />
             <Header />
             {children}
             <ImagePreviewModal />
