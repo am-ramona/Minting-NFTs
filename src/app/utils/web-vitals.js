@@ -1,13 +1,14 @@
 'use client'
-
-import { useReportWebVitals, ReportHandler } from 'next/web-vitals'
  
-export const WebVitals = (onPerfEntry?: ReportHandler) => {
- useReportWebVitals((metric) => {
+import { useReportWebVitals } from 'next/web-vitals'
+ 
+export function WebVitals() {
+  useReportWebVitals((metric) => {
     console.log(metric)
   })
 }
 
+/*-- in Typesript --*/
 // import { ReportHandler } from 'web-vitals';
 
 // const reportWebVitals = (onPerfEntry?: ReportHandler) => {
