@@ -3,7 +3,7 @@
 import { useReportWebVitals, ReportHandler } from 'next/web-vitals'
  
 export const WebVitals = () => {
-  useReportWebVitals((metric) => {
+  return useReportWebVitals((metric) => {
     console.log(metric)
   })
 }
