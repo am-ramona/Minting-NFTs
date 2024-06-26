@@ -51,7 +51,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} ${cinzel.variable}`}>
         <Suspense fallback={<>Loading...</>}>
           <Provider>
-            <WebVitals />
+            {/* <WebVitals /> */}
             <Header />
             {children}
             <ImagePreviewModal />
